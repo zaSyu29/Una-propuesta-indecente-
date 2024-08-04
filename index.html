@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Una propuesta indecente</title>
+    <style>
+        body { 
+            background-color: red;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('https://www.transparenttextures.com/patterns/flowers.png');
+            overflow: hidden;
+        }
+        .title {
+            color: white;
+            font-size: 2em;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .img-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            animation: zoomIn 2s ease-in-out;
+        }
+        .img-container img {
+            width: 30%;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+        .img-container img:hover {
+            transform: scale(1.1);
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .buttons button {
+            background-color: white;
+            border: 2px solid pink;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .buttons button:hover {
+            background-color: lightpink;
+            transform: scale(1.1);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes zoomIn {
+            from { transform: scale(0); }
+            to { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">¿Puedo ser tu novio?</h1>
+    <div class="img-container">
+        <img src="https://static.wikia.nocookie.net/shrek/images/3/3f/Portada_img.jpg/revision/latest?cb=20100719002911&path-prefix=es" 
+        alt="Ese conejito soy yo" />
+    </div>
+    <div class="buttons">
+        <button id="yes"> Pero por supuesto que sí💞 </button>
+        <button id="no"> No, estoy chikita😞 </button>
+    </div>
+    <audio id="kiss-sound" src="sonido-aplausos-y-gritos-del-publico.mp3"></audio>
+    <script>
+        const vutonSi = document.getElementById('yes');
+        const vutonNo = document.getElementById('no');
+        const kissSound = document.getElementById('kiss-sound');
+
+        const somosNovios = () => {
+            kissSound.play();
+            alert('Si te salió esto es pq dijiste que sí, omai😻');
+            alert('Bueno, tampoco tenías más opciones, JAJSAJSJA💗');
+            alert('Mira, te hice tu paginita JAJSAJS, ya sabes, eres mi inspiración');
+            alert('Me haz hecho muy feliz:b');
+            alert('Tqm, mi Jhoselimsita💗');
+            alert('Pdta: Ya eres mi mujer 🫦');
+            
+        };
+
+        const ebitarquerompasmibobo = () => {
+            const buttonRect = vutonNo.getBoundingClientRect();
+            const maxX = window.innerWidth - buttonRect.width;
+            const maxY = window.innerHeight - buttonRect.height;
+
+            const randomX = Math.random() * maxX;
+            const randomY = Math.random() * maxY;
+
+            vutonNo.style.position = 'absolute';
+            vutonNo.style.top = randomY + 'px';
+            vutonNo.style.left = randomX + 'px';
+        };
+
+        vutonSi.addEventListener('click', somosNovios); 
+        vutonNo.addEventListener('mouseover', ebitarquerompasmibobo);
+    </script>
+</body>
+</html>
